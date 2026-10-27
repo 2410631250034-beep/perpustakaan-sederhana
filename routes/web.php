@@ -9,6 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books', [BookController::class, 'index']);
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/members', [MemberController::class, 'index']);
+// Mengganti Route::get menjadi Route::resource agar menangani seluruh fitur CRUD
+Route::resource('categories', CategoryController::class);
+Route::resource('books', BookController::class);
+Route::resource('members', MemberController::class);

@@ -10,4 +10,12 @@ class Category extends Model
         'name',
         'description',
     ];
+
+    /**
+     * Relasi: Satu Kategori memiliki banyak Buku (1 to Many)
+     */
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }
